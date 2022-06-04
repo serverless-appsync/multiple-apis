@@ -1,0 +1,15 @@
+services:
+  common:
+    path: common
+
+  private:
+    path: private
+    dependsOn: common
+    params:
+      usersTableName: ${common.usersTableName}
+
+  public:
+    path: public
+    dependsOn: common
+    params:
+      usersTableName: ${common.usersTableName}

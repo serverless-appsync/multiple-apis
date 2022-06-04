@@ -1,0 +1,10 @@
+## Dummy userId
+#set($userId="eec70b9f-9bf5-4081-83f9-83a439974788")
+{
+    "version": "2018-05-29",
+    "operation": "GetItem",
+    "key": {
+      "PK": $util.dynamodb.toDynamoDBJson("USER#${userId}"),
+      "SK": $util.dynamodb.toDynamoDBJson("USER#${userId}")
+    }
+}

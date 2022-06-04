@@ -1,0 +1,7 @@
+extend type Query {
+  getMe: User!
+}
+
+extend type Mutation {
+  updateMe(user: UpdateUserInput): User!
+}

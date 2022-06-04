@@ -1,0 +1,24 @@
+extend type Mutation {
+  createUser(user: CreateUserInput!): User!
+  updateUser(user: UpdateUserInput!): User!
+}
+
+input CreateUserInput {
+  name: String!
+  email: AWSEmail!
+  isAdmin: Boolean!
+}
+
+# Extend User
+# Expose isAdmin to the private API only
+extend type User {
+  isAdmin: Boolean!
+}
+
+# Extend base UpdateUserInput
+# Allow passing the ID of any user to update
+# Allow updating isAdmin in the private API
+extend input UpdateUserInput {
+  id: ID!
+  isAdmin: Boolean
+}

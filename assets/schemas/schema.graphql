@@ -1,0 +1,29 @@
+type Mutation
+
+type Query {
+  getUser(id: ID!): User!
+  getUsers(pagination: Pagination): UsersResult!
+}
+
+type UsersResult {
+  items: [User!]!
+  nextToken: String
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: AWSEmail!
+  updatedAt: AWSDateTime!
+  createdAt: AWSDateTime!
+}
+
+input Pagination {
+  limit: Int
+  nextToken: String
+}
+
+input UpdateUserInput {
+  name: String
+  email: AWSEmail
+}

@@ -1,0 +1,42 @@
+service: users-public
+
+frameworkVersion: '3'
+
+configValidationMode: error
+
+plugins:
+  - serverless-appsync-plugin
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+appSync:
+  name: public-api
+
+  logging:
+    level: ALL
+
+  schema:
+    - ../assets/schemas/*.graphql
+    - schema.graphql
+
+  authentication:
+    type: API_KEY
+
+  apiKeys:
+    - name: Public
+      expiresAfter: 1y
+
+  dataSources:
+    # common dataSources
+    - ${file(../assets/templates/dataSources.yml)}
+
+  resolvers:
+    # common resolvers
+    - ${file(../assets/templates/usersResolvers.yml)}
+
+    # public only resolvers
+    - Query.getMe: users
+      Mutation.updateMe: users

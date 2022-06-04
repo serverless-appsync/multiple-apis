@@ -1,0 +1,32 @@
+[
+  {
+    "updatedAt": "2022-06-04T09:11:38.579Z",
+    "createdAt": "2022-06-04T09:11:38.579Z",
+    "SK": "USER#5f628810-d9f7-4efa-a1b3-42b458e46075",
+    "isAdmin": false,
+    "id": "5f628810-d9f7-4efa-a1b3-42b458e46075",
+    "PK": "USER#5f628810-d9f7-4efa-a1b3-42b458e46075",
+    "email": "steve@example.com",
+    "name": "Steve"
+  },
+  {
+    "updatedAt": "2022-06-04T09:08:51.649Z",
+    "createdAt": "2022-06-04T08:49:20.942Z",
+    "SK": "USER#eec70b9f-9bf5-4081-83f9-83a439974788",
+    "isAdmin": false,
+    "PK": "USER#eec70b9f-9bf5-4081-83f9-83a439974788",
+    "email": "john@example.com",
+    "id": "eec70b9f-9bf5-4081-83f9-83a439974788",
+    "name": "John"
+  },
+  {
+    "updatedAt": "2022-06-04T09:09:18.596Z",
+    "createdAt": "2022-06-04T08:49:20.942Z",
+    "SK": "USER#f9b3578f-3ea3-49d5-8da7-db29f67fac16",
+    "isAdmin": true,
+    "PK": "USER#f9b3578f-3ea3-49d5-8da7-db29f67fac16",
+    "email": "ben@example.com",
+    "id": "f9b3578f-3ea3-49d5-8da7-db29f67fac16",
+    "name": "Ben"
+  }
+]

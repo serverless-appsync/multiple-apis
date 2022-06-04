@@ -1,0 +1,4 @@
+users:
+  type: 'AMAZON_DYNAMODB'
+  config:
+    tableName: ${param:usersTableName}

@@ -1,0 +1,25 @@
+## Dummy userId
+#set($userId="eec70b9f-9bf5-4081-83f9-83a439974788")
+#set($expressionValues={})
+#set($expressionNames={})
+#set($expression="SET #updatedAt = :updatedAt")
+$util.qr($expressionNames.put("#updatedAt", "updatedAt"))
+$util.qr($expressionValues.put(":updatedAt", $util.dynamodb.toDynamoDB($util.time.nowISO8601())))
+#foreach($item in $ctx.args.user.entrySet())
+  #set($expression="${expression}, #${item.key} = :${item.key}")
+  $util.qr($expressionNames.put("#${item.key}", "${item.key}"))
+  $util.qr($expressionValues.put(":${item.key}", $util.dynamodb.toDynamoDB($item.value)))
+#end
+{
+  "version": "2018-05-29",
+  "operation": "UpdateItem",
+  "key": {
+    "PK": $util.dynamodb.toStringJson("USER#${userId}"),
+    "SK": $util.dynamodb.toStringJson("USER#${userId}")
+  },
+  "update": {
+    "expression": $util.toJson($expression),
+    "expressionNames": $util.toJson($expressionNames),
+    "expressionValues": $util.toJson($expressionValues)
+  }
+}

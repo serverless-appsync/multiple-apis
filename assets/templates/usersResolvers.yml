@@ -1,0 +1,11 @@
+Query.getUser:
+  dataSource: users
+  # paths are relative to public/mapping-templates or private/mapping-templates
+  request: ../../assets/mapping-templates/Query.getUser.request.vtl
+  response: ../../assets/mapping-templates/Query.getUser.response.vtl
+
+Query.getUsers:
+  dataSource: users
+  # paths are relative to public/mapping-templates or private/mapping-templates
+  request: ../../assets/mapping-templates/Query.getUsers.request.vtl
+  response: ../../assets/mapping-templates/Query.getUsers.response.vtl
